@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Registration</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Open Sans";
+    }
+    .container{
+   
+   position: relative; 
+   width: 228vh;
+      height: 100vh;
+
+    }
+    .main-parent {
+      position:absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url(tracker.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      object-fit: cover;
+      /* background-position: top; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      overflow: auto;
+    }
+    .form-wrap {
+      width: 450px;
+      background: rgba(178, 159, 240, 0.75);
+      border-radius: 10px;
+      padding: 35px 40px;
+      backdrop-filter: blur(5px);
+    }
+    form h1 {
+      font-family: "Acme", sans-serif;
+      font-variant: small-caps;
+      font-size: 45px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    span {
+      font-variant: small-caps;
+      color: #f57224;
+    }
+    .single-input input {
+      width: 100%;
+      padding: 14px 10px;
+      border: 1px solid rgba(0, 0, 0, 0.3521);
+      outline: none;
+      background: transparent;
+      margin-bottom: 10px;
+      font-size: 15px;
+      font-family: "Roboto", sans-serif;
+    }
+    .submit-button {
+      text-align: center;
+    }
+    .button {
+      padding: 13px 30px;
+      background-color: #f88847;
+      outline: none;
+      border: none;
+      color: #fff;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .account-have {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    a {
+      color: rgb(34, 34, 34);
+      text-decoration: none;
+    }
+    button:hover {
+      background-color: #722a01;
+    }
+    table,td,tr{
+      border: 2px solid rgb(253, 253, 253);
+      border-collapse: collapse;
+      color: #fff;
+    }
+    #body{
+   
+      margin: auto;
+      font-family: "Acme", sans-serif;
+      font-variant: small-caps;
+      font-size: 25px;
+      text-align: center;
+      margin-bottom: 15px;
+      background-color:  rgba(3, 0, 1, 0.978);;
+
+    }
+    table{
+      width: 500px;
+      height: 570px;
+   margin: auto;
+   margin-left:400px ;
+    }
+   
+
+    
+ 
+  </style>
+  <body>
+    <div class="container">
+    <div class="main-parent">
+      <div class="form-wrap">
+        <form action="">
+          <h1><span>Registration</span></h1>
+          <div class="single-input">
+            <input
+              id="fname"
+              type="text"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="single-input">
+            <input id="no" type="text" placeholder="Enter mob no" required />
+          </div>
+          <div class="single-input">
+            <input
+              id="email"
+              type="email"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <div class="single-input">
+            <input id="age" type="text" placeholder="Enter age" required />
+          </div>
+          <div class="single-input">
+            <input
+              id="weight"
+              type="text"
+              placeholder="Enter weight"
+              required
+            />
+          </div>
+          <div class="single-input">
+            <input
+              id="height"
+              type="text"
+              placeholder="Enter height (in cm)"
+              required
+            />
+          </div>
+          <div class="single-input">
+            <input id="pass" type="password" placeholder="Password (at least 6 digit)" required />
+          </div>
+          <div class="single-input">
+            <input
+              id="cpass"
+              type="password"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+          <div class="submit-button">
+            <button class="button">Submit</button>
+          </div>
+          <div class="account-have">
+            <a href="">Forget Password</a>
+            <a href="">Have an account please Login</a>
+          </div>
+        </form>
+        
+      </div>
+   
+    </div>
+    <div id="detail">
+      <table>
+        <tbody id="body">
+
+        </tbody>
+      </table>
+    </div>
+</div>
+    <script>
+      const submit_button = document.querySelector(".button");
+   
+      
+      submit_button.onclick = (e) => {
+        e.preventDefault();
+        const fname = document.getElementById("fname").value;
+        const lname = document.getElementById("no").value;
+        const email = document.getElementById("email").value;
+        const age = document.getElementById("age").value;
+        const weight = document.getElementById("weight").value;
+        const height = document.getElementById("height").value;
+        const pass = document.getElementById("pass").value;
+        const cpass = document.getElementById("cpass").value;
+
+        localStorage.setItem("FirstName", fname);
+        localStorage.setItem("No", lname);
+        localStorage.setItem("Email", email);
+        localStorage.setItem("Age", age);
+        localStorage.setItem("Weight", weight);
+        localStorage.setItem("Height", height);
+        localStorage.setItem("Password", pass);
+        localStorage.setItem("Cpassword", cpass);
+        if (
+          fname == "" &&
+          lname == "" &&
+          email == "" &&
+          pass == "" &&
+          cpass == ""
+        ) {
+          alert("plese fill the detail");
+        } else {
+          document.querySelector("#body").innerHTML +=
+  "<tr><td>Name</td><td>"+fname+"</td></tr><tr><td>Mob no</td><td>"+lname+"</td></tr> <tr><td>Email</td><td>"+email+"</td></tr><tr><td>Age</td><td>"+age+"</td></tr><tr><td>Weight</td><td>"+weight+"</td></tr><tr><td>Height</td><td>"+height+"(cm)</td></tr>";
+ 
+  document.getElementById("detail").style.position = "absolute";
+  document.getElementById("detail").classList.add("detail"); 
+          if (pass.length >= 6 && pass.length <= 20) {
+            if (pass !== cpass) {
+              alert("wrong password");
+            } 
+
+            else {
+              alert("registerd succussfully");
+
+              setTimeout(() => {
+                location.href = "login.html";
+              }, 10000);
+            }
+          }
+        }
+      };
+
+
+    </script>
+  </body>
+</html>

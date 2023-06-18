@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form </title>
+  
+
+</head>
+<style>
+
+body {
+ 
+    background-image: url(tracker.jpg) ; 
+  background-repeat: no-repeat;
+
+ background-size: cover; 
+ background-attachment: fixed;
+overflow-x: none;
+  font-family: 'Rubik', sans-serif;
+}
+
+.login-form {
+
+  background: #fff;
+  width: 500px;
+  margin: 65px auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+ h1 {
+  padding: 35px 35px 0 35px;
+  font-weight: 300;
+}
+ .content {
+  padding: 35px;
+  text-align: center;
+}
+ .input-field {
+  padding: 12px 5px;
+}
+ .input-field input {
+  font-size: 16px;
+  display: block;
+  font-family: 'Rubik', sans-serif;
+  width: 100%;
+  padding: 10px 1px;
+  border: 0;
+  border-bottom: 1px solid #747474;
+  outline: none;
+  transition: all .2s;
+}
+
+
+
+#hss{
+
+color: #e35869;
+}
+.action{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+margin: auto;
+  color: #74767e;
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  margin: 20px;
+  gap: 60px;
+  
+}
+.log{
+margin: auto;
+padding: 10px;
+
+}
+.log:hover{
+  
+  background-color: #e35869;
+}
+a{
+  align-items: center;
+  color: #74767e;
+  font-family: 'Rubik', sans-serif;
+  text-decoration: none;
+}
+a.action{
+  width: 50%;
+}
+</style>
+<body>
+
+<div class="login-form">
+  <form>
+    <h1 id="hss">Login</h1>
+    <div class="content">
+      <div class="input-field">
+        <input type="email" placeholder="Email" autocomplete="nope">
+      </div>
+      <div class="input-field">
+        <input type="password" placeholder="Password" autocomplete="new-password">
+      </div>
+      <a href="#" class="link">Forgot Your Password?</a>
+    </div>
+    <div class="action">
+    <div class="log">
+      <a class="enter" href="registration.html">Register</a>
+</div>
+<div class="log">
+      <a href="index.html">Sign in</a>
+      </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
